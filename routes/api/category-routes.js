@@ -48,7 +48,7 @@ router.put('/:id', async (req, res) => {
   try {
     const category = await Category.findByIdAndUpdate(req.params.id, req.body);
     res.status(200).json(category);
-    } catch {
+    } catch (err) {
       console.error(err);
       res.status(400).json(err);
 }}); 
