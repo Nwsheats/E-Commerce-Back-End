@@ -36,15 +36,7 @@ router.get('/:id', async (req, res) => {
         res.status(400).json(err);
   }
 });
-  // find one category by its `id` value
 
-  //   const category = await Category.fineOne(req.params.id);
-  //     res.status(200).json(category);
-  //     } catch (err) {
-  //       console.error(err);
-  //       res.status(400).json(err);
-  // }
-    // be sure to include its associated Products
 
 router.post('/', async (req, res) => {
   // create a new category
