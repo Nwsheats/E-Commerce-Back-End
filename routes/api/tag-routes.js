@@ -27,7 +27,10 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   try {
-    const tag = await Tag.findById(req.params.id);
+    const tag = await Tag.findOne({
+      where: {id: req.params.id},
+      include: [Product]
+    })
     res.status(200).json(tag);
     } catch (err) {
       console.error(err);
@@ -38,7 +41,8 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const tag = await Tag.create(req.body);
+    const tag = new Tag(req.body);
+    await tag.save();
     res.status(200).json(tag);
     } catch (err) {
       console.error(err);
@@ -59,7 +63,9 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
   try {
-    const tag = await Tag.update(req.params.id, req.body);
+    const tag = await Tag.update(req.body, {
+      where: {id: req.params.id}
+    });
     res.status(200).json(tag);
     } catch (err) {
       console.error(err);
