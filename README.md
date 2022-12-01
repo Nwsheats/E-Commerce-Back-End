@@ -5,9 +5,9 @@
 ## Table of Contents
   
 - [Description](#description)
-- [User Story](user-story)
-- [Acceptance Criteria](acceptance-criteria)
-- [Mock Up](mock-up)
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Mock Up](#mock-up)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
